@@ -33,89 +33,94 @@ The dataset used is the **Superstore Sales Dataset**, which contains sales data 
 **Source**: The dataset can be downloaded from [Kaggle: Superstore Sales Dataset](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final).
 
 ## Prerequisites
-To run the analysis script, ensure you have the following installed:
+To run the analysis notebook, ensure you have the following installed:
 - **Python 3.6+**
 - Required Python libraries:
   ```bash
-  pip install pandas matplotlib seaborn
+  pip install pandas matplotlib seaborn jupyter
   ```
-- The Superstore Sales Dataset CSV file (named `superstore_sales.csv`).
+- The Superstore Sales Dataset CSV file (named `Superstore.csv`).
 
 ## Installation
 1. **Download the Dataset**:
    - Obtain the Superstore Sales Dataset from the [Kaggle link](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final).
-   - Save the CSV file as `superstore_sales.csv` in the same directory as the analysis script.
+   - Save the CSV file as `Superstore.csv` in the `Week1` directory.
 
 2. **Set Up the Environment**:
    - Install Python if not already installed (download from [python.org](https://www.python.org/downloads/)).
    - Install the required libraries by running:
      ```bash
-     pip install pandas matplotlib seaborn
+     pip install pandas matplotlib seaborn jupyter
      ```
 
-3. **Download the Analysis Script**:
-   - Save the provided `superstore_analysis.py` script in the same directory as the dataset.
+3. **Download the Analysis Notebook**:
+   - Save the provided `Data_Understanding&Visualization.ipynb` notebook in the `Week1` directory.
 
 ## Usage
-The `superstore_analysis.py` script performs the entire analysis pipeline, including data cleaning, exploratory analysis, visualization, and insight generation. Follow these steps to use it:
+The `Data_Understanding&Visualization.ipynb` notebook performs the entire analysis pipeline, including data cleaning, exploratory analysis, visualization, and insight generation. Follow these steps to use it:
 
 1. **Prepare the Dataset**:
-   - Ensure `superstore_sales.csv` is in the same directory as `superstore_analysis.py`.
-   - If the dataset has a different name or location, update the `pd.read_csv` line in the script to point to the correct file path.
+   - Ensure `Superstore.csv` is in the `Week1` directory alongside `Data_Understanding&Visualization.ipynb`.
+   - If the dataset has a different name or location, update the `pd.read_csv` line in the notebook to point to the correct file path (e.g., `pd.read_csv('Week1/Superstore.csv')`).
 
-2. **Run the Script**:
-   - Open a terminal or command prompt in the directory containing the script and dataset.
-   - Execute the script using:
+2. **Run the Notebook**:
+   - Open a terminal or command prompt and navigate to the `Week1` directory.
+   - Start Jupyter Notebook by running:
      ```bash
-     python superstore_analysis.py
+     jupyter notebook
      ```
+   - In the Jupyter interface, open `Data_Understanding&Visualization.ipynb` and run all cells (or use the "Run All" option).
 
 3. **Outputs**:
-   - **Console Output**: The script prints:
+   - **Console Output (in Notebook)**: The notebook displays:
      - Dataset information (data types, missing values)
      - Key insights (e.g., best-selling category, top region, sales trends)
-   - **Visualizations**: The following PNG files are generated in the same directory:
+   - **Visualizations**: The following PNG files are generated in the `Week1/Outputs` directory:
      - `category_sales.png`: Bar chart of total sales by category
      - `region_sales.png`: Bar chart of total sales by region
      - `monthly_sales_trend.png`: Line graph of monthly sales trends
      - `correlation_heatmap.png`: Heatmap of correlations between Sales, Profit, Quantity, and Discount
      - `profit_by_category_region.png`: Grouped bar chart of profit by category and region
-   - **Cleaned Dataset**: A cleaned version of the dataset is saved as `cleaned_superstore_sales.csv`.
+   - **Cleaned Dataset**: A cleaned version of the dataset is saved as `cleaned_superstore_sales.csv` in the `Week1` directory.
 
 4. **Interpreting Results**:
-   - Review the console output for key insights, such as the top-selling category and region.
-   - Open the PNG files to view visualizations that support the insights.
+   - Review the notebook output for key insights, such as the top-selling category and region.
+   - Check the `Week1/Outputs` directory for visualization PNG files that support the insights.
    - Use `cleaned_superstore_sales.csv` for further analysis if needed.
 
 ## Project Structure
-- `superstore_sales.csv`: Input dataset (must be provided by the user).
-- `superstore_analysis.py`: Python script for data cleaning, analysis, and visualization.
-- `cleaned_superstore_sales.csv`: Output cleaned dataset.
-- Visualization files:
-  - `category_sales.png`
-  - `region_sales.png`
-  - `monthly_sales_trend.png`
-  - `correlation_heatmap.png`
-  - `profit_by_category_region.png`
+```
+Week1/
+├── Data_Understanding&Visualization.ipynb  # Main Jupyter Notebook for analysis
+├── Superstore.csv                         # Input dataset
+├── cleaned_superstore_sales.csv           # Output cleaned dataset
+├── Outputs/                               # Directory for visualization outputs
+│   ├── category_sales.png
+│   ├── region_sales.png
+│   ├── monthly_sales_trend.png
+│   ├── correlation_heatmap.png
+│   └── profit_by_category_region.png
+```
 
 ## Learning Outcomes
 This project addresses the following learning objectives:
-- **Data Types & Null Handling**: The script inspects data types, handles missing values (numerical with median, categorical with mode), and parses dates.
+- **Data Types & Null Handling**: The notebook inspects data types, handles missing values (numerical with median, categorical with mode), and parses dates.
 - **Grouping, Filtering, Aggregation**: Uses pandas `groupby` and `pivot_table` to analyze sales and profit by category, region, and sub-category.
 - **Basic Plots & Visual Storytelling**: Generates bar charts, line graphs, and heatmaps with clear labels to communicate insights effectively.
 
 ## Troubleshooting
-- **FileNotFoundError**: Ensure `superstore_sales.csv` is in the same directory as the script or update the file path in the script.
-- **Missing Dependencies**: Verify that `pandas`, `matplotlib`, and `seaborn` are installed using `pip install`.
-- **Date Parsing Issues**: If `Order Date` or `Ship Date` fail to parse, check the date format in the dataset and adjust the `pd.to_datetime` format parameter if needed.
+- **FileNotFoundError**: Ensure `Superstore.csv` is in the `Week1` directory or update the file path in the notebook.
+- **Missing Dependencies**: Verify that `pandas`, `matplotlib`, `seaborn`, and `jupyter` are installed using `pip install`.
+- **Date Parsing Issues**: If `Order Date` or `Ship Date` fail to parse, check the date format in the dataset and adjust the `pd.to_datetime` format parameter in the notebook if needed.
+- **Output Directory**: Ensure the `Outputs` folder exists in the `Week1` directory, or create it manually before running the notebook to store visualization files.
 
 ## Contact
 For questions, issues, or feedback about this project, please contact:
-- **Email**: [muhammadusman.becsef22@iba-suk.edu.pk]
-- **GitHub**: [https://www.github.com/Usmansarwar143]
-- **LinkedIn**: [https://www.linkedin.com/in/muhammad-usman-018535253]
+- **Email**: muhammadusman.becsef22@iba-suk.edu.pk
+- **GitHub**: [https://www.github.com/Usmansarwar143](https://www.github.com/Usmansarwar143)
+- **LinkedIn**: [https://www.linkedin.com/in/muhammad-usman-018535253](https://www.linkedin.com/in/muhammad-usman-018535253)
 
-If you need assistance with the script or dataset, feel free to reach out!
+If you need assistance with the notebook or dataset, feel free to reach out!
 
 ## License
 This project is for educational purposes and uses the Superstore Sales Dataset, which is publicly available on Kaggle. Ensure you comply with the dataset's terms of use.
